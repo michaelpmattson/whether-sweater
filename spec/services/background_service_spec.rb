@@ -27,7 +27,7 @@ RSpec.describe BackgroundService do
       expect(response[:results].first[:urls][:regular]).to be_a(String)
       expect(response[:results].first[:urls][:small]).to   be_a(String)
       expect(response[:results].first[:urls][:thumb]).to   be_a(String)
-      # binding.pry
+
       expect(response[:results].first[:links]).to have_key(:self)
       expect(response[:results].first[:links]).to have_key(:html)
       expect(response[:results].first[:links]).to have_key(:download)
