@@ -74,4 +74,52 @@ RSpec.describe ForecastSerializer do
     expect(hourly_weather.first[:conditions]).to  be_a(String)
     expect(hourly_weather.first[:icon]).to        be_a(String)
   end
+
+  it 'does not include unneeded keys' do
+    expect(@serialized).to_not have_key(:lat)
+    expect(@serialized).to_not have_key(:lon)
+    expect(@serialized).to_not have_key(:timezone)
+    expect(@serialized).to_not have_key(:timezone_offset)
+
+    current_weather = @serialized[:data][:attributes][:current_weather]
+    daily_weather   = @serialized[:data][:attributes][:daily_weather]
+    hourly_weather  = @serialized[:data][:attributes][:hourly_weather]
+
+    expect(current_weather).to_not have_key(:pressure)
+    expect(current_weather).to_not have_key(:dew_point)
+    expect(current_weather).to_not have_key(:clouds)
+    expect(current_weather).to_not have_key(:wind_speed)
+    expect(current_weather).to_not have_key(:wind_deg)
+    expect(current_weather).to_not have_key(:wind_gust)
+    expect(current_weather).to_not have_key(:weather)
+
+    expect(daily_weather.first).to_not have_key(:moonrise)
+    expect(daily_weather.first).to_not have_key(:moonset)
+    expect(daily_weather.first).to_not have_key(:moon_phase)
+    expect(daily_weather.first).to_not have_key(:temp)
+    expect(daily_weather.first).to_not have_key(:feels_like)
+    expect(daily_weather.first).to_not have_key(:pressure)
+    expect(daily_weather.first).to_not have_key(:humidity)
+    expect(daily_weather.first).to_not have_key(:dew_point)
+    expect(daily_weather.first).to_not have_key(:wind_speed)
+    expect(daily_weather.first).to_not have_key(:wind_deg)
+    expect(daily_weather.first).to_not have_key(:wind_gust)
+    expect(daily_weather.first).to_not have_key(:weather)
+    expect(daily_weather.first).to_not have_key(:clouds)
+    expect(daily_weather.first).to_not have_key(:pop)
+    expect(daily_weather.first).to_not have_key(:uvi)
+
+    expect(hourly_weather.first).to_not have_key(:pressure)
+    expect(hourly_weather.first).to_not have_key(:feels_like)
+    expect(hourly_weather.first).to_not have_key(:humidity)
+    expect(hourly_weather.first).to_not have_key(:dew_point)
+    expect(hourly_weather.first).to_not have_key(:uvi)
+    expect(hourly_weather.first).to_not have_key(:clouds)
+    expect(hourly_weather.first).to_not have_key(:visibility)
+    expect(hourly_weather.first).to_not have_key(:wind_speed)
+    expect(hourly_weather.first).to_not have_key(:wind_deg)
+    expect(hourly_weather.first).to_not have_key(:wind_gust)
+    expect(hourly_weather.first).to_not have_key(:weather)
+    expect(hourly_weather.first).to_not have_key(:pop)
+  end
 end
