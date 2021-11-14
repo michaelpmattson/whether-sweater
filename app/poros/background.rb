@@ -16,7 +16,7 @@ class Background
       source: 'Unsplash',
       source_url: 'https://unsplash.com/?utm_source=weather_sweater&utm_medium=referral',
       photographer: data[:name],
-      photographer_profile: "#{data[:links][:self]}?utm_source=weather_sweater&utm_medium=referral"
+      photographer_profile: "#{data[:links][:html]}?utm_source=weather_sweater&utm_medium=referral"
     }
   end
 end
