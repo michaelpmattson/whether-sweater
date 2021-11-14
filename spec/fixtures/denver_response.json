@@ -1,0 +1,117 @@
+{
+  "data": {
+    "id": null,
+    "type": "forecast",
+    "attributes": {
+      "current_weather": {
+        "datetime": "2020-09-30 13:27:03 -0600",
+        "sunrise": "2020-09-30 06:27:03 -0600",
+        "sunset": "2020-09-30 18:27:03 -0600",
+        "temperature": 63.91,
+        "feels_like": 61.18,
+        "humidity": 25,
+        "uvi": 2.12,
+        "visibility": 10000,
+        "conditions": "overcast clouds",
+        "icon": "04d"
+      },
+      "daily_weather": [
+        {
+          "date": "2020-10-01",
+          "sunrise": "2020-10-01 06:27:03 -0600",
+          "sunset": "2020-10-01 18:27:03 -0600",
+          "max_temp": 64.17,
+          "min_temp": 46.99,
+          "conditions": "overcast clouds",
+          "icon": "04d"
+        },
+        {
+          "date": "2020-10-02",
+          "sunrise": "2020-10-02 06:27:03 -0600",
+          "sunset": "2020-10-02 18:27:03 -0600",
+          "max_temp": 66.42,
+          "min_temp": 42.44,
+          "conditions": "broken clouds",
+          "icon": "04d"
+        },
+        {
+          "date": "2020-10-03",
+          "sunrise": "2020-10-03 06:27:03 -0600",
+          "sunset": "2020-10-03 18:27:03 -0600",
+          "max_temp": 69.46,
+          "min_temp": 50.04,
+          "conditions": "clear sky",
+          "icon": "01d"
+        },
+        {
+          "date": "2020-10-04",
+          "sunrise": "2020-10-04 06:27:03 -0600",
+          "sunset": "2020-10-04 18:27:03 -0600",
+          "max_temp": 69.1,
+          "min_temp": 53.44,
+          "conditions": "overcast clouds",
+          "icon": "04d"
+        },
+        {
+          "date": "2020-10-05",
+          "sunrise": "2020-10-05 06:27:03 -0600",
+          "sunset": "2020-10-05 18:27:03 -0600",
+          "max_temp": 42.94,
+          "min_temp": 35.92,
+          "conditions": "light snow",
+          "icon": "13d"
+        }
+      ],
+      "hourly_weather": [
+        {
+          "time": "14:00:00",
+          "temperature": 63.91,
+          "conditions": "overcast clouds",
+          "icon": "04d"
+        },
+        {
+          "time": "14:00:00",
+          "temperature": 64.17,
+          "conditions": "overcast clouds",
+          "icon": "04d"
+        },
+        {
+          "time": "14:00:00",
+          "temperature": 64.13,
+          "conditions": "overcast clouds",
+          "icon": "04d"
+        },
+        {
+          "time": "14:00:00",
+          "temperature": 62.74,
+          "conditions": "overcast clouds",
+          "icon": "04d"
+        },
+        {
+          "time": "14:00:00",
+          "temperature": 56.48,
+          "conditions": "broken clouds",
+          "icon": "04n"
+        },
+        {
+          "time": "14:00:00",
+          "temperature": 56.82,
+          "conditions": "clear sky",
+          "icon": "01n"
+        },
+        {
+          "time": "14:00:00",
+          "temperature": 55.45,
+          "conditions": "clear sky",
+          "icon": "01n"
+        },
+        {
+          "time": "14:00:00",
+          "temperature": 54.12,
+          "conditions": "few clouds",
+          "icon": "02n"
+        }
+      ]
+    }
+  }
+}
