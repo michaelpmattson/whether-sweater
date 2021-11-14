@@ -8,4 +8,11 @@ RSpec.describe 'Forecast API' do
 
     data = JSON.parse(response.body, symbolize_names: true)
   end
+
+  it 'returns a 400 response if no param is entered', :vcr do
+    get('/api/v1/forecast?location')
+
+    expect(response).to_not be_successful
+    expect(response.status).to eq(400)
+  end
 end
