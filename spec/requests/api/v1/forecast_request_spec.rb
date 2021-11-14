@@ -7,6 +7,5 @@ RSpec.describe 'Forecast API' do
     expect(response).to be_successful
 
     data = JSON.parse(response.body, symbolize_names: true)
-    binding.pry
   end
 end

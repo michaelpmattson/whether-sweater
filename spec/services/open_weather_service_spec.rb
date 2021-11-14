@@ -4,7 +4,8 @@ RSpec.describe 'OpenWeather service' do
   describe '#get_weather(lat, lon)' do
     it 'gets the weather for a latitude and longitude', :vcr do
       # lat and lng for Denver
-      response = OpenWeatherService.get_weather(39.738453, -104.984853)
+      geo = {lat: 39.738453, lon: -104.984853}
+      response = OpenWeatherService.get_weather(geo)
 
       expect(response).to be_a(Hash)
 
