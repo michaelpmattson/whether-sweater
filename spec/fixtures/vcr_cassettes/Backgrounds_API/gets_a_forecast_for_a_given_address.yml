@@ -1,0 +1,88 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://api.unsplash.com/search/photos?orientation=landscape&page=1&per_page=1&query=denver,co
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Authorization:
+      - Client-ID 9fQ-o4gQ7SRmW4BqbnEFCgH63vgIpxwz9nmU8fBEbG0
+      User-Agent:
+      - Faraday v1.8.0
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '1158'
+      Server:
+      - Cowboy
+      Content-Type:
+      - application/json
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Request-Method:
+      - "*"
+      Access-Control-Allow-Headers:
+      - "*"
+      Access-Control-Expose-Headers:
+      - Link,X-Total,X-Per-Page,X-RateLimit-Limit,X-RateLimit-Remaining
+      Cache-Control:
+      - no-cache, no-store, must-revalidate
+      X-Unsplash-Version:
+      - v1
+      Warning:
+      - The tags property in this endpoint is deprecated. https://changelog.unsplash.com/deprecations/2021/07/12/tags-search-deprecation.html
+      Link:
+      - <https://api.unsplash.com/search/photos?orientation=landscape&page=2627&per_page=1&query=denver%2Cco>;
+        rel="last", <https://api.unsplash.com/search/photos?orientation=landscape&page=2&per_page=1&query=denver%2Cco>;
+        rel="next"
+      X-Total:
+      - '2627'
+      X-Per-Page:
+      - '1'
+      Etag:
+      - W/"0df35d0b8f8b9f15c0c2dd917d10f9f5"
+      X-Ratelimit-Limit:
+      - '50'
+      X-Ratelimit-Remaining:
+      - '49'
+      X-Request-Id:
+      - 193f3f24-35ef-46ad-88eb-0e922ce62e93
+      X-Runtime:
+      - '0.100563'
+      Strict-Transport-Security:
+      - max-age=31536000; includeSubDomains
+      Via:
+      - 1.1 vegur, 1.1 varnish, 1.1 varnish
+      Accept-Ranges:
+      - bytes
+      Date:
+      - Sun, 14 Nov 2021 19:56:19 GMT
+      Age:
+      - '5798'
+      X-Served-By:
+      - cache-dca17726-DCA, cache-den8237-DEN
+      X-Cache:
+      - MISS, HIT
+      X-Cache-Hits:
+      - 0, 1
+      X-Timer:
+      - S1636919780.666500,VS0,VE1
+      Vary:
+      - Accept-Encoding, Origin,Authorization,client-geo-region,Accept
+    body:
+      encoding: ASCII-8BIT
+      string: !binary |-
+        eyJ0b3RhbCI6MjYyNywidG90YWxfcGFnZXMiOjI2MjcsInJlc3VsdHMiOlt7ImlkIjoiRVdKY003THZWdmciLCJjcmVhdGVkX2F0IjoiMjAyMS0xMC0xN1QxNzo0OTo1MC0wNDowMCIsInVwZGF0ZWRfYXQiOiIyMDIxLTExLTE0VDA1OjMyOjEzLTA1OjAwIiwicHJvbW90ZWRfYXQiOm51bGwsIndpZHRoIjo2MTQ0LCJoZWlnaHQiOjM0NTYsImNvbG9yIjoiI2MwNzM0MCIsImJsdXJfaGFzaCI6IkxqTWhsNCUxNTdzQTBoSXF0NldxSXBheXQ3b0wiLCJkZXNjcmlwdGlvbiI6IjhwbSBjdXJmZXcgd2FzIGxpZnRlZC4iLCJhbHRfZGVzY3JpcHRpb24iOm51bGwsInVybHMiOnsicmF3IjoiaHR0cHM6Ly9pbWFnZXMudW5zcGxhc2guY29tL3Bob3RvLTE2MzQ1MDczMDc5NzMtOWRmMWIyM2Y1NzAxP2l4aWQ9TW53eU56VTJNREo4TUh3eGZITmxZWEpqYUh3eGZIeGtaVzUyWlhJbE1rTmpiM3hsYm53d2ZEQjhmSHd4TmpNMk9URXpPVGd5XHUwMDI2aXhsaWI9cmItMS4yLjEiLCJmdWxsIjoiaHR0cHM6Ly9pbWFnZXMudW5zcGxhc2guY29tL3Bob3RvLTE2MzQ1MDczMDc5NzMtOWRmMWIyM2Y1NzAxP2Nyb3A9ZW50cm9weVx1MDAyNmNzPXNyZ2JcdTAwMjZmbT1qcGdcdTAwMjZpeGlkPU1ud3lOelUyTURKOE1Id3hmSE5sWVhKamFId3hmSHhrWlc1MlpYSWxNa05qYjN4bGJud3dmREI4Zkh3eE5qTTJPVEV6T1RneVx1MDAyNml4bGliPXJiLTEuMi4xXHUwMDI2cT04NSIsInJlZ3VsYXIiOiJodHRwczovL2ltYWdlcy51bnNwbGFzaC5jb20vcGhvdG8tMTYzNDUwNzMwNzk3My05ZGYxYjIzZjU3MDE/Y3JvcD1lbnRyb3B5XHUwMDI2Y3M9dGlueXNyZ2JcdTAwMjZmaXQ9bWF4XHUwMDI2Zm09anBnXHUwMDI2aXhpZD1Nbnd5TnpVMk1ESjhNSHd4ZkhObFlYSmphSHd4Zkh4a1pXNTJaWElsTWtOamIzeGxibnd3ZkRCOGZId3hOak0yT1RFek9UZ3lcdTAwMjZpeGxpYj1yYi0xLjIuMVx1MDAyNnE9ODBcdTAwMjZ3PTEwODAiLCJzbWFsbCI6Imh0dHBzOi8vaW1hZ2VzLnVuc3BsYXNoLmNvbS9waG90by0xNjM0NTA3MzA3OTczLTlkZjFiMjNmNTcwMT9jcm9wPWVudHJvcHlcdTAwMjZjcz10aW55c3JnYlx1MDAyNmZpdD1tYXhcdTAwMjZmbT1qcGdcdTAwMjZpeGlkPU1ud3lOelUyTURKOE1Id3hmSE5sWVhKamFId3hmSHhrWlc1MlpYSWxNa05qYjN4bGJud3dmREI4Zkh3eE5qTTJPVEV6T1RneVx1MDAyNml4bGliPXJiLTEuMi4xXHUwMDI2cT04MFx1MDAyNnc9NDAwIiwidGh1bWIiOiJodHRwczovL2ltYWdlcy51bnNwbGFzaC5jb20vcGhvdG8tMTYzNDUwNzMwNzk3My05ZGYxYjIzZjU3MDE/Y3JvcD1lbnRyb3B5XHUwMDI2Y3M9dGlueXNyZ2JcdTAwMjZmaXQ9bWF4XHUwMDI2Zm09anBnXHUwMDI2aXhpZD1Nbnd5TnpVMk1ESjhNSHd4ZkhObFlYSmphSHd4Zkh4a1pXNTJaWElsTWtOamIzeGxibnd3ZkRCOGZId3hOak0yT1RFek9UZ3lcdTAwMjZpeGxpYj1yYi0xLjIuMVx1MDAyNnE9ODBcdTAwMjZ3PTIwMCJ9LCJsaW5rcyI6eyJzZWxmIjoiaHR0cHM6Ly9hcGkudW5zcGxhc2guY29tL3Bob3Rvcy9FV0pjTTdMdlZ2ZyIsImh0bWwiOiJodHRwczovL3Vuc3BsYXNoLmNvbS9waG90b3MvRVdKY003THZWdmciLCJkb3dubG9hZCI6Imh0dHBzOi8vdW5zcGxhc2guY29tL3Bob3Rvcy9FV0pjTTdMdlZ2Zy9kb3dubG9hZD9peGlkPU1ud3lOelUyTURKOE1Id3hmSE5sWVhKamFId3hmSHhrWlc1MlpYSWxNa05qYjN4bGJud3dmREI4Zkh3eE5qTTJPVEV6T1RneSIsImRvd25sb2FkX2xvY2F0aW9uIjoiaHR0cHM6Ly9hcGkudW5zcGxhc2guY29tL3Bob3Rvcy9FV0pjTTdMdlZ2Zy9kb3dubG9hZD9peGlkPU1ud3lOelUyTURKOE1Id3hmSE5sWVhKamFId3hmSHhrWlc1MlpYSWxNa05qYjN4bGJud3dmREI4Zkh3eE5qTTJPVEV6T1RneSJ9LCJjYXRlZ29yaWVzIjpbXSwibGlrZXMiOjEsImxpa2VkX2J5X3VzZXIiOmZhbHNlLCJjdXJyZW50X3VzZXJfY29sbGVjdGlvbnMiOltdLCJzcG9uc29yc2hpcCI6bnVsbCwidG9waWNfc3VibWlzc2lvbnMiOnsiY3VycmVudC1ldmVudHMiOnsic3RhdHVzIjoicmVqZWN0ZWQifX0sInVzZXIiOnsiaWQiOiI2Zk0wblRycHZUSSIsInVwZGF0ZWRfYXQiOiIyMDIxLTExLTE0VDEyOjExOjI4LTA1OjAwIiwidXNlcm5hbWUiOiJkaWxseWRhbGx5aW5nIiwibmFtZSI6IkRpbGxvbiBXYW5uZXIiLCJmaXJzdF9uYW1lIjoiRGlsbG9uIiwibGFzdF9uYW1lIjoiV2FubmVyIiwidHdpdHRlcl91c2VybmFtZSI6bnVsbCwicG9ydGZvbGlvX3VybCI6Imh0dHBzOi8vZGlsbHlkYWxseS5teXBvcnRmb2xpby5jb20iLCJiaW8iOiJBcnRpc3QsIFBob3RvZ3JhcGhlciwgY2luZW1hdG9ncmFwaGVyIGxpdmluZyBpbiBEZW52ZXIsIENvLiBcclxuTXkgcGhvdG9zIGFyZSBhIHNtYWxsIGdsaW1wc2Ugb2Ygd2hhdCBJ4oCZbSBmZWVsaW5nIG9yIHRoYXQgcGVyc3BlY3RpdmUgYXQgdGhhdCB0aW1lLiBUcnlpbmcgdG8gY29tbXVuaWNhdGUgdGhhdCB3aXRoIG90aGVyIGh1bWFucy4gSSBsb3ZlIHlvdS4iLCJsb2NhdGlvbiI6IkRlbnZlciBDb2xvcmFkbyIsImxpbmtzIjp7InNlbGYiOiJodHRwczovL2FwaS51bnNwbGFzaC5jb20vdXNlcnMvZGlsbHlkYWxseWluZyIsImh0bWwiOiJodHRwczovL3Vuc3BsYXNoLmNvbS9AZGlsbHlkYWxseWluZyIsInBob3RvcyI6Imh0dHBzOi8vYXBpLnVuc3BsYXNoLmNvbS91c2Vycy9kaWxseWRhbGx5aW5nL3Bob3RvcyIsImxpa2VzIjoiaHR0cHM6Ly9hcGkudW5zcGxhc2guY29tL3VzZXJzL2RpbGx5ZGFsbHlpbmcvbGlrZXMiLCJwb3J0Zm9saW8iOiJodHRwczovL2FwaS51bnNwbGFzaC5jb20vdXNlcnMvZGlsbHlkYWxseWluZy9wb3J0Zm9saW8iLCJmb2xsb3dpbmciOiJodHRwczovL2FwaS51bnNwbGFzaC5jb20vdXNlcnMvZGlsbHlkYWxseWluZy9mb2xsb3dpbmciLCJmb2xsb3dlcnMiOiJodHRwczovL2FwaS51bnNwbGFzaC5jb20vdXNlcnMvZGlsbHlkYWxseWluZy9mb2xsb3dlcnMifSwicHJvZmlsZV9pbWFnZSI6eyJzbWFsbCI6Imh0dHBzOi8vaW1hZ2VzLnVuc3BsYXNoLmNvbS9wcm9maWxlLTE2MTYyNjY0NzcxNTYtZTRjZDUwMTk3ZTRkaW1hZ2U/aXhsaWI9cmItMS4yLjFcdTAwMjZxPTgwXHUwMDI2Zm09anBnXHUwMDI2Y3JvcD1mYWNlc1x1MDAyNmNzPXRpbnlzcmdiXHUwMDI2Zml0PWNyb3BcdTAwMjZoPTMyXHUwMDI2dz0zMiIsIm1lZGl1bSI6Imh0dHBzOi8vaW1hZ2VzLnVuc3BsYXNoLmNvbS9wcm9maWxlLTE2MTYyNjY0NzcxNTYtZTRjZDUwMTk3ZTRkaW1hZ2U/aXhsaWI9cmItMS4yLjFcdTAwMjZxPTgwXHUwMDI2Zm09anBnXHUwMDI2Y3JvcD1mYWNlc1x1MDAyNmNzPXRpbnlzcmdiXHUwMDI2Zml0PWNyb3BcdTAwMjZoPTY0XHUwMDI2dz02NCIsImxhcmdlIjoiaHR0cHM6Ly9pbWFnZXMudW5zcGxhc2guY29tL3Byb2ZpbGUtMTYxNjI2NjQ3NzE1Ni1lNGNkNTAxOTdlNGRpbWFnZT9peGxpYj1yYi0xLjIuMVx1MDAyNnE9ODBcdTAwMjZmbT1qcGdcdTAwMjZjcm9wPWZhY2VzXHUwMDI2Y3M9dGlueXNyZ2JcdTAwMjZmaXQ9Y3JvcFx1MDAyNmg9MTI4XHUwMDI2dz0xMjgifSwiaW5zdGFncmFtX3VzZXJuYW1lIjoiRGlsbHlkYWxseS5pbmciLCJ0b3RhbF9jb2xsZWN0aW9ucyI6MCwidG90YWxfbGlrZXMiOjM1LCJ0b3RhbF9waG90b3MiOjEwNCwiYWNjZXB0ZWRfdG9zIjp0cnVlLCJmb3JfaGlyZSI6dHJ1ZSwic29jaWFsIjp7Imluc3RhZ3JhbV91c2VybmFtZSI6IkRpbGx5ZGFsbHkuaW5nIiwicG9ydGZvbGlvX3VybCI6Imh0dHBzOi8vZGlsbHlkYWxseS5teXBvcnRmb2xpby5jb20iLCJ0d2l0dGVyX3VzZXJuYW1lIjpudWxsLCJwYXlwYWxfZW1haWwiOm51bGx9fSwidGFncyI6W3sidHlwZSI6InNlYXJjaCIsInRpdGxlIjoiZGVudmVyIn0seyJ0eXBlIjoic2VhcmNoIiwidGl0bGUiOiJjbyJ9LHsidHlwZSI6InNlYXJjaCIsInRpdGxlIjoidXNhIn1dfV19
+  recorded_at: Sun, 14 Nov 2021 19:56:19 GMT
+recorded_with: VCR 6.0.0
