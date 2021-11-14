@@ -15,7 +15,6 @@ RSpec.describe Background do
     expect(@background.location).to eq('denver,co')
     expect(@background.url).to      eq('https://images.unsplash.com/photo-1634507307973-9df1b23f5701?crop=entropy&cs=srgb&fm=jpg&ixid=MnwyNzU2MDJ8MHwxfHNlYXJjaHwxfHxkZW52ZXIlMkNjb3xlbnwwfDB8fHwxNjM2OTE2MzA2&ixlib=rb-1.2.1&q=85')
     expect(@background.credit).to   be_a(Hash)
-    binding.pry
   end
 
   describe '#get_credit(data)' do
@@ -33,7 +32,7 @@ RSpec.describe Background do
       expect(credits[:photographer]).to eq('Dillon Wanner')
 
       expect(credits).to have_key(:photographer_profile)
-      expect(credits[:photographer_profile]).to eq('https://api.unsplash.com/users/dillydallying?utm_source=weather_sweater&utm_medium=referral')
+      expect(credits[:photographer_profile]).to eq('https://unsplash.com/@dillydallying?utm_source=weather_sweater&utm_medium=referral')
     end
   end
 end
