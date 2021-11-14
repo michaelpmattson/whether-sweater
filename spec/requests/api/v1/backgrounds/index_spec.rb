@@ -9,7 +9,7 @@ RSpec.describe 'Backgrounds API' do
     # data = JSON.parse(response.body, symbolize_names: true)
   end
 
-  xit 'returns a 400 response if no param is entered', :vcr do
+  it 'returns a 400 response if no param is entered', :vcr do
     get('/api/v1/backgrounds?location')
 
     expect(response).to_not be_successful
