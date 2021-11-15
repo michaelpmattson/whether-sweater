@@ -4,6 +4,7 @@ class ActivitiesFacade
     other = {}
     if forecast.current_temperature > 60
       other = ActivityService.get_activity_by_type('recreational')
+      require "pry"; binding.pry
     elsif forecast.current_temperature >= 50
       other = ActivityService.get_activity_by_type('busywork')
     else
