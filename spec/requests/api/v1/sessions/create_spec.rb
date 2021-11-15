@@ -27,28 +27,22 @@ RSpec.describe 'the post sessions endpoint' do
     expect(body[:data][:attributes][:email]).to   eq(@user.email)
     expect(body[:data][:attributes][:api_key]).to eq(@user.api_key)
   end
-end
 
-#
-# status: 200
-# body:
-#
-# {
-#   "data": {
-#     "type": "users",
-#     "id": "1",
-#     "attributes": {
-#       "email": "whatever@example.com",
-#       "api_key": "jgn983hy48thw9begh98h4539h4"
-#     }
-#   }
-# }
-# Requirements:
-#
-# This POST endpoint should NOT call your endpoint like /api/v1/sessions?email=person@woohoo.com&password=abc123, and should NOT send as form data either. You must send a JSON payload in the body of the request
-# in Postman, under the address bar, click on “Body”, select “raw”, which will show a dropdown that probably says “Text” in it, choose “JSON” from the list
-# this is a hard requirement to pass this endpoint!
-# A successful request returns the user’s api key.
-# An unsuccessful request returns an appropriate 400-level status code and body with a description of why the request wasn’t successful.
-# Potential reasons a request would fail: credentials are bad, etc
-# Security tip: never tell a user which field (email/password) is incorrect, as this alerts malicious users how to attack your site (eg, if they’ve guessed a correct email address, and you tell them the password is bad, then they don’t need to keep guessing email addresses, and can just try to crack the password)
+  it 'gives a 400 response for bad info' do
+    post('/api/v1/sessions', params: { email: 'bigboy@zmail.com', password: 'potato' })
+
+    expect(response).to_not be_successful
+    expect(response.status).to eq(400)
+
+    body = JSON.parse(response.body, symbolize_names: true)
+    expect(body[:error]).to eq('Sorry, bad credentials.')
+
+    post('/api/v1/sessions', params: { email: 'bigboy@email.com', password: 'zotato' })
+
+    expect(response).to_not be_successful
+    expect(response.status).to eq(400)
+
+    body = JSON.parse(response.body, symbolize_names: true)
+    expect(body[:error]).to eq('Sorry, bad credentials.')
+  end
+end
