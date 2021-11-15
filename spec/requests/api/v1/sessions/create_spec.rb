@@ -6,7 +6,10 @@ RSpec.describe 'the post sessions endpoint' do
   end
 
   it 'logs in a user and gives them their api key' do
-    post('/api/v1/sessions', params: { email: 'bigboy@email.com', password: 'potato' })
+    email_params = { email: 'bigboy@email.com', password: 'potato' }
+    headers      = { "CONTENT_TYPE" => "application/json", "Accept" => "application/json" }
+
+    post('/api/v1/sessions', headers: headers, params: JSON.generate(email_params))
 
     expect(response).to be_successful
     expect(response.status).to eq(200)
@@ -29,7 +32,11 @@ RSpec.describe 'the post sessions endpoint' do
   end
 
   it 'gives a 400 response for bad info' do
-    post('/api/v1/sessions', params: { email: 'bigboy@zmail.com', password: 'potato' })
+    email_params = { email: 'bigboy@zmail.com', password: 'potato' }
+    headers      = { "CONTENT_TYPE" => "application/json", "Accept" => "application/json" }
+
+    post('/api/v1/sessions', headers: headers, params: JSON.generate(email_params))
+
 
     expect(response).to_not be_successful
     expect(response.status).to eq(400)
@@ -37,7 +44,10 @@ RSpec.describe 'the post sessions endpoint' do
     body = JSON.parse(response.body, symbolize_names: true)
     expect(body[:error]).to eq('Sorry, bad credentials.')
 
-    post('/api/v1/sessions', params: { email: 'bigboy@email.com', password: 'zotato' })
+    email_params = { email: 'bigboy@email.com', password: 'zotato' }
+    headers      = { "CONTENT_TYPE" => "application/json", "Accept" => "application/json" }
+
+    post('/api/v1/sessions', headers: headers, params: JSON.generate(email_params))
 
     expect(response).to_not be_successful
     expect(response.status).to eq(400)
@@ -47,14 +57,20 @@ RSpec.describe 'the post sessions endpoint' do
   end
 
   it 'email is case insensitive' do
-    post('/api/v1/sessions', params: { email: 'BIGBOY@EMAIL.COM', password: 'potato' })
+    email_params = { email: 'BIGBOY@EMAIL.COM', password: 'potato' }
+    headers      = { "CONTENT_TYPE" => "application/json", "Accept" => "application/json" }
+
+    post('/api/v1/sessions', headers: headers, params: JSON.generate(email_params))
 
     expect(response).to be_successful
     expect(response.status).to eq(200)
   end
 
   it 'password is case sensitive' do
-    post('/api/v1/sessions', params: { email: 'BIGBOY@EMAIL.COM', password: 'POTATP' })
+    email_params = { email: 'BIGBOY@EMAIL.COM', password: 'POTATP' }
+    headers      = { "CONTENT_TYPE" => "application/json", "Accept" => "application/json" }
+
+    post('/api/v1/sessions', headers: headers, params: JSON.generate(email_params))
 
     expect(response).to_not be_successful
     expect(response.status).to eq(400)
