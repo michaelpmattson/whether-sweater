@@ -1,0 +1,171 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: http://www.boredapi.com/api/activity?type=relaxation
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v1.8.0
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - Cowboy
+      Connection:
+      - keep-alive
+      X-Powered-By:
+      - Express
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Allow-Headers:
+      - Origin, X-Requested-With, Content-Type, Accept
+      Content-Type:
+      - application/json; charset=utf-8
+      Content-Length:
+      - '149'
+      Etag:
+      - W/"95-g4sQTGksgcne7DJnVlu9G9xZ66Y"
+      Date:
+      - Mon, 15 Nov 2021 18:14:44 GMT
+      Via:
+      - 1.1 vegur
+    body:
+      encoding: UTF-8
+      string: '{"activity":"Write a list of things you are grateful for","type":"relaxation","participants":1,"price":0,"link":"","key":"2062010","accessibility":0}'
+  recorded_at: Mon, 15 Nov 2021 18:14:44 GMT
+- request:
+    method: get
+    uri: http://www.boredapi.com/api/activity?type=busywork
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v1.8.0
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - Cowboy
+      Connection:
+      - keep-alive
+      X-Powered-By:
+      - Express
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Allow-Headers:
+      - Origin, X-Requested-With, Content-Type, Accept
+      Content-Type:
+      - application/json; charset=utf-8
+      Content-Length:
+      - '138'
+      Etag:
+      - W/"8a-rJtxNy8qbAQZGrPA/daB3+iLmyc"
+      Date:
+      - Mon, 15 Nov 2021 18:14:46 GMT
+      Via:
+      - 1.1 vegur
+    body:
+      encoding: UTF-8
+      string: '{"activity":"Make a to-do list for your week","type":"busywork","participants":1,"price":0,"link":"","key":"5920481","accessibility":0.05}'
+  recorded_at: Mon, 15 Nov 2021 18:14:46 GMT
+- request:
+    method: get
+    uri: http://www.boredapi.com/api/activity?type=relaxation
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v1.8.0
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - Cowboy
+      Connection:
+      - keep-alive
+      X-Powered-By:
+      - Express
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Allow-Headers:
+      - Origin, X-Requested-With, Content-Type, Accept
+      Content-Type:
+      - application/json; charset=utf-8
+      Content-Length:
+      - '130'
+      Etag:
+      - W/"82-rmadrPTU9CKbq1Onxp6VL1c9ers"
+      Date:
+      - Mon, 15 Nov 2021 18:14:49 GMT
+      Via:
+      - 1.1 vegur
+    body:
+      encoding: UTF-8
+      string: '{"activity":"Take a caffeine nap","type":"relaxation","participants":1,"price":0.1,"link":"","key":"5092652","accessibility":0.08}'
+  recorded_at: Mon, 15 Nov 2021 18:14:49 GMT
+- request:
+    method: get
+    uri: http://www.boredapi.com/api/activity?type=busywork
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v1.8.0
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - Cowboy
+      Connection:
+      - keep-alive
+      X-Powered-By:
+      - Express
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Allow-Headers:
+      - Origin, X-Requested-With, Content-Type, Accept
+      Content-Type:
+      - application/json; charset=utf-8
+      Content-Length:
+      - '134'
+      Etag:
+      - W/"86-/iskL7csf+rri6kj+j8Z78NOiHo"
+      Date:
+      - Mon, 15 Nov 2021 18:14:52 GMT
+      Via:
+      - 1.1 vegur
+    body:
+      encoding: UTF-8
+      string: '{"activity":"Organize your movie collection","type":"busywork","participants":1,"price":0,"link":"","key":"6378359","accessibility":0}'
+  recorded_at: Mon, 15 Nov 2021 18:14:52 GMT
+recorded_with: VCR 6.0.0
