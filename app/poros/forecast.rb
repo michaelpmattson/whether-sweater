@@ -32,4 +32,8 @@ class Forecast
   def current_temperature
     current_weather.temperature
   end
+
+  def current_conditions
+    current_weather.conditions
+  end
 end

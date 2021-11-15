@@ -7,7 +7,7 @@ class ActivitiesSerializer
         attributes: {
           destination: destination,
           forecast: {
-            summary: forecast.current_weather.conditions,
+            summary: forecast.current_conditions,
             temperature: "#{forecast.current_temperature} F"
           },
           activities: activities.map do |type, activity|
