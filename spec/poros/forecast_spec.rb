@@ -36,6 +36,12 @@ RSpec.describe Forecast do
       end
     end
   end
+
+  describe '#current_temperature' do
+    it 'gets current temperature' do
+      expect(@forecast.current_temperature).to eq(63.91)
+    end
+  end
 end
 
 
