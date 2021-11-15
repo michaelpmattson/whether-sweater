@@ -28,4 +28,8 @@ class Forecast
     end
     hourly
   end
+
+  def current_temperature
+    current_weather.temperature
+  end
 end
