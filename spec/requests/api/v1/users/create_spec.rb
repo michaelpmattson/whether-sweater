@@ -3,7 +3,10 @@ require 'rails_helper'
 RSpec.describe 'User registration', type: :request do
   describe 'POST /api/v1/users' do
     it 'authenticates the client' do
-      post('/api/v1/users', params: { email: 'bigboy@email.com', password: 'potato', password_confirmation: 'potato'})
+      params = { email: 'bigboy@email.com', password: 'potato', password_confirmation: 'potato'}
+      headers     = { "CONTENT_TYPE" => "application/json", "Accept" => "application/json" }
+
+      post('/api/v1/users', headers: headers, params: JSON.generate(params))
 
       expect(response).to be_successful
       expect(response.status).to eq(201)
@@ -33,55 +36,60 @@ RSpec.describe 'User registration', type: :request do
     end
 
     it 'requires all fields' do
-      post('/api/v1/users', params: { email: '', password: 'potato', password_confirmation: 'potato'})
+      params = { email: '', password: 'potato', password_confirmation: 'potato'}
+      headers     = { "CONTENT_TYPE" => "application/json", "Accept" => "application/json" }
+      post('/api/v1/users', headers: headers, params: JSON.generate(params))
 
       expect(response).to_not be_successful
       expect(response.status).to eq(400)
-
       body = JSON.parse(response.body, symbolize_names: true)
       expect(body[:error]).to eq('all fields must have values')
 
-      post('/api/v1/users', params: { email: 'bigboy@email.com', password: '', password_confirmation: 'potato'})
+
+      params = { email: 'bigboy@email.com', password: '', password_confirmation: 'potato'}
+      headers     = { "CONTENT_TYPE" => "application/json", "Accept" => "application/json" }
+      post('/api/v1/users', headers: headers, params: JSON.generate(params))
 
       expect(response).to_not be_successful
       expect(response.status).to eq(400)
-
       body = JSON.parse(response.body, symbolize_names: true)
       expect(body[:error]).to eq('all fields must have values')
 
-      post('/api/v1/users', params: { email: 'bigboy@email.com', password: 'potato', password_confirmation: ''})
+
+      params = { email: 'bigboy@email.com', password: 'potato', password_confirmation: ''}
+      headers     = { "CONTENT_TYPE" => "application/json", "Accept" => "application/json" }
+      post('/api/v1/users', headers: headers, params: JSON.generate(params))
 
       expect(response).to_not be_successful
       expect(response.status).to eq(400)
-
       body = JSON.parse(response.body, symbolize_names: true)
-
       expect(body[:error]).to eq('all fields must have values')
     end
 
     it 'requires password and password_confirmation to be same' do
-      post('/api/v1/users', params: { email: 'bigboy@email.com', password: 'potato', password_confirmation: 'tomato'})
+      params = { email: 'bigboy@email.com', password: 'potato', password_confirmation: 'tomato'}
+      headers     = { "CONTENT_TYPE" => "application/json", "Accept" => "application/json" }
+      post('/api/v1/users', headers: headers, params: JSON.generate(params))
 
       expect(response).to_not be_successful
       expect(response.status).to eq(400)
-
       body = JSON.parse(response.body, symbolize_names: true)
-
       expect(body[:error]).to eq('password and password confirmation must be same')
     end
 
-    it 'cannot makew two users with same email' do
-      post('/api/v1/users', params: { email: 'bigboy@email.com', password: 'potato', password_confirmation: 'potato'})
+    it 'cannot make two users with same email' do
+      params = { email: 'bigboy@email.com', password: 'potato', password_confirmation: 'potato'}
+      headers     = { "CONTENT_TYPE" => "application/json", "Accept" => "application/json" }
+      post('/api/v1/users', headers: headers, params: JSON.generate(params))
 
       expect(response).to be_successful
 
-      post('/api/v1/users', params: { email: 'bigboy@email.com', password: 'tomato', password_confirmation: 'tomato'})
+
+      post('/api/v1/users', headers: headers, params: JSON.generate(params))
 
       expect(response).to_not be_successful
       expect(response.status).to eq(403)
-
       body = JSON.parse(response.body, symbolize_names: true)
-
       expect(body[:error]).to eq('email has already been used')
     end
   end
