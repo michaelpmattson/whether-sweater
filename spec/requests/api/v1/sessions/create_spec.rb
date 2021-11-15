@@ -45,4 +45,18 @@ RSpec.describe 'the post sessions endpoint' do
     body = JSON.parse(response.body, symbolize_names: true)
     expect(body[:error]).to eq('Sorry, bad credentials.')
   end
+
+  it 'email is case insensitive' do
+    post('/api/v1/sessions', params: { email: 'BIGBOY@EMAIL.COM', password: 'potato' })
+
+    expect(response).to be_successful
+    expect(response.status).to eq(200)
+  end
+
+  it 'password is case sensitive' do
+    post('/api/v1/sessions', params: { email: 'BIGBOY@EMAIL.COM', password: 'POTATP' })
+
+    expect(response).to_not be_successful
+    expect(response.status).to eq(400)
+  end
 end
