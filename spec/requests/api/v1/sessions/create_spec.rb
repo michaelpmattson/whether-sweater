@@ -6,10 +6,10 @@ RSpec.describe 'the post sessions endpoint' do
   end
 
   it 'logs in a user and gives them their api key' do
-    email_params = { email: 'bigboy@email.com', password: 'potato' }
+    params = { email: 'bigboy@email.com', password: 'potato' }
     headers      = { "CONTENT_TYPE" => "application/json", "Accept" => "application/json" }
 
-    post('/api/v1/sessions', headers: headers, params: JSON.generate(email_params))
+    post('/api/v1/sessions', headers: headers, params: JSON.generate(params))
 
     expect(response).to be_successful
     expect(response.status).to eq(200)
