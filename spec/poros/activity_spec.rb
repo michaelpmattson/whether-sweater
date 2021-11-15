@@ -8,6 +8,7 @@ RSpec.describe Activity do
 
   it 'exists and has attributes' do
     expect(@activity).to be_an(Activity)
+    expect(@activity.name).to eq("Teach your dog a new trick")
     expect(@activity.type).to eq("relaxation")
     expect(@activity.participants).to eq(1)
     expect(@activity.price).to eq(0.05)
