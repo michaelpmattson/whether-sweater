@@ -23,6 +23,6 @@ class RoadTrip
   end
 
   def calc_hours
-    @travel_time.to_time.hour
+    @travel_time.split(':').first.to_i
   end
 end
