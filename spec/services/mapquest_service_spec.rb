@@ -52,6 +52,17 @@ RSpec.describe 'Mapquest service' do
         expect(location[:adminArea3]).to be_a(String)
       end
 
+      response[:route][:legs].each do |leg|
+        expect(leg).to have_key(:maneuvers)
+        expect(leg[:maneuvers]).to be_an(Array)
+        expect(leg[:maneuvers].last).to have_key(:startPoint)
+        expect(leg[:maneuvers].last[:startPoint]).to be_a(Hash)
+        expect(leg[:maneuvers].last[:startPoint]).to have_key(:lat)
+        expect(leg[:maneuvers].last[:startPoint]).to have_key(:lng)
+        expect(leg[:maneuvers].last[:startPoint][:lat]).to be_a(Float)
+        expect(leg[:maneuvers].last[:startPoint][:lng]).to be_a(Float)
+      end
+
       expect(response[:info]).to have_key(:statuscode)
       expect(response[:info][:statuscode]).to eq(0)
     end
