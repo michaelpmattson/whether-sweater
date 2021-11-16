@@ -73,7 +73,6 @@ RSpec.describe 'Mapquest service' do
 
       expect(response).to be_a(Hash)
 
-
       expect(response).to have_key(:route)
       expect(response).to have_key(:info)
 
