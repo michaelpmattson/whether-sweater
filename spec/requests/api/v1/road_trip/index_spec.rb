@@ -39,34 +39,40 @@ RSpec.describe 'Road Trip Api', type: :request do
     expect(body[:data][:attributes][:weather_at_eta][:temperature]).to be_a(Float)
     expect(body[:data][:attributes][:weather_at_eta][:conditions]).to  be_a(String)
   end
+
+  it 'requires a valid api key' do
+    params  = {
+      origin: "Denver,CO",
+      destination: "Pueblo,CO",
+    }
+    headers = { "CONTENT_TYPE" => "application/json", "Accept" => "application/json" }
+
+    post('/api/v1/road_trip', headers: headers, params: JSON.generate(params))
+
+    expect(response).to_not be_successful
+    expect(response.status).to eq(401)
+    body = JSON.parse(response.body, symbolize_names: true)
+    expect(body[:error]).to eq('Valid api key required.')
+
+
+    params  = {
+      origin: "Denver,CO",
+      destination: "Pueblo,CO",
+      api_key: 'boogers'
+    }
+    headers = { "CONTENT_TYPE" => "application/json", "Accept" => "application/json" }
+
+    post('/api/v1/road_trip', headers: headers, params: JSON.generate(params))
+
+    expect(response).to_not be_successful
+    expect(response.status).to eq(401)
+    body = JSON.parse(response.body, symbolize_names: true)
+    expect(body[:error]).to eq('Valid api key required.')
+  end
 end
-# {
-#   "data": {
-#     "id": null,
-#     "type": "roadtrip",
-#     "attributes": {
-#       "start_city": "Denver, CO",
-#       "end_city": "Estes Park, CO",
-#       "travel_time": "2 hours, 13 minutes"
-#       "weather_at_eta": {
-#         "temperature": 59.4,
-#         "conditions": "partly cloudy with a chance of meatballs"
-#       }
-#     }
-#   }
-# }
 
-
-# a data attribute, under which all other attributes are present:
-# id, always set to null
-# type, always set to “roadtrip”
-# attributes, an object containing road trip information:
-# start_city, string, such as “Denver, CO”
-# end_city, string, such as “Estes Park, CO”
 # travel_time, string, something user-friendly like “2 hours, 13 minutes” or “2h13m” or “02:13:00” or something of that nature (you don’t have to include seconds); set this string to “impossible route” if there is no route between your cities
-# weather_at_eta, conditions at end_city when you arrive (not CURRENT weather), object containing:
-# temperature, numeric value in Fahrenheit
-# conditions, string, as given by OpenWeather
+
+# weather_at_eta,
 # note: this object will be blank if the travel time is impossible
-# eg:
 #

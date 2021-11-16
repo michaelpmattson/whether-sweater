@@ -10,10 +10,10 @@ class RoadTrip
     @start_city = "#{route[:route][:locations].first[:adminArea5]}, #{route[:route][:locations].first[:adminArea3]}"
     @end_city   = "#{route[:route][:locations].last[:adminArea5]}, #{route[:route][:locations].last[:adminArea3]}"
     @travel_time = route[:route][:formattedTime]
-    @weather_at_eta = weather_at_eta(weather)
+    @weather_at_eta = get_weather_at_eta(weather)
   end
 
-  def weather_at_eta(weather)
+  def get_weather_at_eta(weather)
     hours = calc_hours
     w = weather[:hourly][hours]
     {
@@ -26,20 +26,3 @@ class RoadTrip
     @travel_time.to_time.hour
   end
 end
-
-
-# {
-#   "data": {
-#     "id": null,
-#     "type": "roadtrip",
-#     "attributes": {
-#       "start_city": "Denver, CO",
-#       "end_city": "Estes Park, CO",
-#       "travel_time": "2 hours, 13 minutes"
-#       "weather_at_eta": {
-#         "temperature": 59.4,
-#         "conditions": "partly cloudy with a chance of meatballs"
-#       }
-#     }
-#   }
-# }

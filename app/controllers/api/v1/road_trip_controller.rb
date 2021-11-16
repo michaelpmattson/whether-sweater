@@ -3,9 +3,9 @@ class Api::V1::RoadTripController < ApplicationController
     user = User.find_by(api_key: params[:api_key])
     if user
       road_trip = RoadTripFacade.get_road_trip(road_trip_params)
-      binding.pry
-
-      render json: {}, status: :ok
+      render json: RoadTripSerializer.new(road_trip), status: :ok
+    else
+      render json: { error: 'Valid api key required.' }, status: :unauthorized
     end
   end
 
