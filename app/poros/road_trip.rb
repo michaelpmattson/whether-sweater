@@ -7,13 +7,15 @@ class RoadTrip
 
   def initialize(route, weather)
     @id = nil
-    @start_city = "#{route[:route][:locations].first[:adminArea5]}, #{route[:route][:locations].first[:adminArea3]}"
-    @end_city   = "#{route[:route][:locations].last[:adminArea5]}, #{route[:route][:locations].last[:adminArea3]}"
-    @travel_time = route[:route][:formattedTime]
+    @start_city = route[:start_city]
+    @end_city   = route[:end_city]
+    @travel_time = route[:travel_time]
     @weather_at_eta = get_weather_at_eta(weather)
   end
 
   def get_weather_at_eta(weather)
+    return weather if weather.empty?
+
     hours = calc_hours
     w = weather[:hourly][hours]
     {
