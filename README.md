@@ -10,7 +10,7 @@
 
 ### Overview
 
-.
+This project is the backend of a hypothetical service-oriented project that allows users to make various searches about weather and locations, in addition to planning a trip. A number of working endpoints are listed below.
 
 ### APIs
 
@@ -342,13 +342,9 @@ Example JSON Response:
 
 
 ### Contact me:
-![LinkedIn][linkedin-badge]
+![LinkedIn][linkedin-badge](https://www.linkedin.com/in/michael-p-mattson/)
 
-- [Michael Mattson](https://www.linkedin.com/in/michael-p-mattson/)
-
-![Github][github-badge]
-
-- [Michael Mattson](https://github.com/michaelpmattson)
+![Github][github-badge](https://github.com/michaelpmattson)
 
 
 
