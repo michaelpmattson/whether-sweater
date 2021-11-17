@@ -342,9 +342,10 @@ Example JSON Response:
 
 
 ### Contact me:
-[linkedin-badge](https://www.linkedin.com/in/michael-p-mattson/)
+[![Build Status][travis-image]][travis-url]
+[!LinkedIn][linkedin-badge](https://www.linkedin.com/in/michael-p-mattson/)
 
-[github-badge](https://github.com/michaelpmattson)
+[!GitHub][github-badge](https://github.com/michaelpmattson)
 
 
 
