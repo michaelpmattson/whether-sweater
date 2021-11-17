@@ -343,7 +343,6 @@ Example JSON Response:
 
 ### Contact me:
 [![LinkedIn][linkedin-badge]](https://www.linkedin.com/in/michael-p-mattson/)
-
 [![GitHub][github-badge]](https://github.com/michaelpmattson)
 
 
