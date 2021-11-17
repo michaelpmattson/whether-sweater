@@ -5,6 +5,7 @@
 - [Endpoints](#endpoints)
 - [APIs](#apis)
 - [Setup](#setup)
+- [Endpoints](#endpoints)
 - [Technologies](#technologies)
 - [Contact me](#contact_me)
 
