@@ -4,6 +4,7 @@ class RoadTripFacade
     if trip_data[:info][:statuscode].zero?
       dest_geo  = trip_data[:route][:legs].first[:maneuvers].last[:startPoint]
       weather_data = OpenWeatherService.get_weather({lat: dest_geo[:lat], lon: dest_geo[:lng]})
+      binding.pry
       rt = RoadTrip.new(road_trip_params(trip_data), weather_data)
     else
       trip_data = {
@@ -25,13 +26,4 @@ class RoadTripFacade
       travel_time: route[:route][:formattedTime]
     }
   end
-
-
-#   def self.format_params(params)
-#     s = params[:origin].split(',')
-#     e = params[:destination].split(',')
-# binding.pry
-#     # {
-#     # }
-#   end
 end
