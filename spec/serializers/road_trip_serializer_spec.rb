@@ -1,7 +1,5 @@
 require 'rails_helper'
-# forecast_hash = JSON.parse(forecast_data, symbolize_names: true)
-# forecast      = Forecast.new(forecast_hash)
-# @serialized   = ForecastSerializer.format_forecast(forecast)
+
 RSpec.describe RoadTripSerializer do
   describe 'happy path' do
     before(:each) do
